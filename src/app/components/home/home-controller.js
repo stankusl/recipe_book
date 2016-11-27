@@ -29,7 +29,7 @@
                 HomeServices.getRecipeById($stateParams.recipeId).then(
                     function(result) {
                         // console.log(result);
-                        self.recipe = result;
+                        self.recipe = result[0];
                     },
                     function(err) {
                         console.log('Error saving to endpoint: ', err);
