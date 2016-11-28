@@ -7,4 +7,4 @@ server.use( modRewrite([
       '!\\.\\w+$ /index.html [L]'
 ]));
 server.use('/', express.static(__dirname + '/build'));
-server.listen(4420);
+server.listen(888);
