@@ -3,6 +3,9 @@
 body {
     background: url('../img/recipe-book-bg.png');
     background-size: cover;
+    .btn-danger{
+      font-weight: bold !important
+    }
 
     .application-title {
         font-family: 'Sansita One', cursive;

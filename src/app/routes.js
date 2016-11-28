@@ -8,7 +8,7 @@
         $stateProvider
 
         .state('homepage', {
-            url: '/',
+            url: '/:pageId',
             templateUrl: './app/components/home/home-view.html',
             controller: 'HomeController',
             controllerAs: 'Home'

@@ -4,6 +4,24 @@
       <label for="search"><input name="search" ng-model="search" type="text" placeholder="Search Recipe" class="search form-control"></label>
     </div>
 
+    <div class="col-xs-12">
+      <div style="float:left;" ng-if="!(Home.data.current_page == '1')">
+        <button ng-click="Home.showPreviousPage()"
+          class="form-group btn btn-danger btn-large">
+          Previous page
+        </button>
+      </div>
+
+      <div style="float: right;">
+        <button ng-click="Home.showNextPage()" class="form-group display-block btn btn-danger btn-large">
+          Next page
+        </button>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <br>
+    <div class="clearfix"></div>
+
     <div ng-repeat="recipe in Home.recipes | filter: search" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 recipe" ui-sref="recipe({ recipeId : recipe.id })">
       <div class="recipe-inner">
         <div class="recipe-info name">{{ recipe.name }}</div>
@@ -13,4 +31,23 @@
       </div>
     </div>
 
-</div>
+    <div class="col-xs-12">
+      <div style="float:left;" ng-if="!(Home.data.current_page == '1')">
+        <button ng-click="Home.showPreviousPage()"
+          class="form-group btn btn-danger btn-large">
+          Previous page
+        </button>
+      </div>
+
+      <div style="float: right;">
+        <button ng-click="Home.showNextPage()" class="form-group display-block btn btn-danger btn-large">
+          Next page
+        </button>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-xs-12">
+      <p>Currently there are {{ Home.data.total }} recipes. Viewing {{ Home.data.per_page }} recipes per page. From {{ Home.data.from}} to {{ Home.data.to }}</p>
+    </div>
+    
+  </div>

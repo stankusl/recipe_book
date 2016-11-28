@@ -6,19 +6,32 @@
 
         self.recipes = {};
         self.recipe = {};
+        self.data = {};
 
         self.backButton = function() {
           console.log('this works!');
-         $window.history.back();
         }
 
+        self.showNextPage = function() {
+          var currentPage = !$stateParams.pageId ? 1 : $stateParams.pageId;
+          var nextPage = parseInt(currentPage)+1;
+          $window.location.href = '/'+nextPage;
+        }
+
+        self.showPreviousPage = function() {
+          var currentPage = !$stateParams.pageId ? 1 : $stateParams.pageId;
+          var nextPage = parseInt(currentPage)-1;
+          $window.location.href = '/'+nextPage;
+        }
 
         switch ($state.current.name) {
 
             case 'homepage':
 
-                HomeServices.getAllRecipes().then(
+                HomeServices.getAllRecipes($stateParams.pageId).then(
                     function(result) {
+                        self.data = result;
+
                         console.log(result);
                         self.recipes = result.data;
                     },

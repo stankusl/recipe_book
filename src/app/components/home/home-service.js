@@ -11,8 +11,10 @@ angular.module('application').factory('HomeServices', function($http, $log, $q, 
     };
 
 
-    function getAllRecipes() {
+    function getAllRecipes(paginationUrlParam) {
 
+        recipesEndpoint = recipesEndpoint + '?page=' + paginationUrlParam;
+        
         var deferred = $q.defer();
         $http({
                 method: "GET",
