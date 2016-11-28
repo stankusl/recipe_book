@@ -12,6 +12,24 @@ body {
         color: #fff;
     }
 
+    .ingredients {
+      display: block;
+      background: #fff;
+      margin-top : 40px;
+      padding: 20px;
+      box-sizing:border-box;
+    }
+
+    .cooking-instructions {
+      display: block;
+      margin-top : 30px;
+      padding: 10px;
+      .instructions {
+        background: #fff;
+        padding: 20px;
+      }
+    }
+
     .recipe-list {
         margin-top: 30px;
         margin-bottom: 30px;
@@ -21,6 +39,11 @@ body {
         background-size: 50px 50px;
         border: 20px solid rgba(255,255,255,0.6);
 
+        .informations{
+          display: block;
+          background: #fff;
+          padding: 20px;
+        }
         .recipe {
             margin-bottom: 20px;
             overflow: visible;
