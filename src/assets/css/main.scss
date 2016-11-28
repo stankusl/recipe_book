@@ -3,8 +3,20 @@
 body {
     background: url('../img/recipe-book-bg.png');
     background-size: cover;
-    .btn-danger{
-      font-weight: bold !important
+
+    .cart {
+        display: block;
+        width: 300px;
+        height: 201px;
+        overflow: auto;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        background: rgba(255,255,255,0.6);
+    }
+
+    .btn-danger {
+        font-weight: bold !important;
     }
 
     .application-title {
@@ -16,21 +28,22 @@ body {
     }
 
     .ingredients {
-      display: block;
-      background: #fff;
-      margin-top : 40px;
-      padding: 20px;
-      box-sizing:border-box;
+        display: block;
+        background: #fff;
+        margin-top: 40px;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     .cooking-instructions {
-      display: block;
-      margin-top : 30px;
-      padding: 10px;
-      .instructions {
-        background: #fff;
-        padding: 20px;
-      }
+        display: block;
+        margin-top: 30px;
+        padding: 10px;
+
+        .instructions {
+            background: #fff;
+            padding: 20px;
+        }
     }
 
     .recipe-list {
@@ -42,15 +55,17 @@ body {
         background-size: 50px 50px;
         border: 20px solid rgba(255,255,255,0.6);
 
-        .informations{
-          display: block;
-          background: #fff;
-          padding: 20px;
+        .informations {
+            display: block;
+            background: #fff;
+            padding: 20px;
         }
+
         .recipe {
             margin-bottom: 20px;
             overflow: visible;
             cursor: pointer;
+
             .recipe-inner {
                 display: block;
                 position: relative;
@@ -99,7 +114,6 @@ body {
                         top: 90px;
                         bottom: 0;
                     }
-
                 }
             }
         }

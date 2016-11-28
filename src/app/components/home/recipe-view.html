@@ -1,3 +1,9 @@
+<div class="cart" ng-if="(Recipe.cart).length > 0">
+  <ul ng-repeat="ingredient in Recipe.cart track by $index">
+    <li>{{ ingredient.name }} <span style="cursor: pointer" ng-click="Recipe.removeFromCart($index)">X</span></li>
+  </ul>
+</div>
+
 <h1 class="application-title">{{ Recipe.recipe.name }}</h1>
 <div class="container recipe-list">
     <div class="col-xs-12">
@@ -24,7 +30,7 @@
           <ul>
             <li ng-repeat="ingredient in Recipe.recipe.ingredients">{{ ingredient.name }} - {{ ingredient.amount + '' + ingredient.unit }}</li>
           </ul>
-          <button class="btn btn-large primary">
+          <button ng-click="Recipe.AddToCart(Recipe.recipe.ingredients)" class="btn btn-large primary">
             Bake it!
           </button>
         </div>

@@ -7,6 +7,22 @@
         self.recipes = {};
         self.recipe = {};
         self.data = {};
+        self.cart = [];
+
+        self.removeFromCart = function(index) {
+          self.cart.splice(index, 1);
+          localStorage.setItem('items', JSON.stringify(self.cart));
+        }
+
+        self.AddToCart = function(arrayOfItems) {
+        //  console.log('works');
+          angular.forEach(arrayOfItems, function(item) {
+        //    console.log(item);
+            self.cart.push(item);
+          })
+
+          localStorage.setItem('items', JSON.stringify(self.cart));
+        }
 
         self.backButton = function() {
           console.log('this works!');
@@ -38,6 +54,9 @@
                     function(err) {
                         console.log('Error saving to endpoint: ', err);
                     });
+
+                self.cart = JSON.parse(localStorage.getItem('items'));
+
                 break;
 
 
@@ -51,6 +70,11 @@
                     function(err) {
                         console.log('Error saving to endpoint: ', err);
                     });
+
+                    angular.forEach(JSON.parse(localStorage.getItem('items')), function(item) {
+                      self.cart.push(item);
+                    })
+
                 break;
 
             default:
