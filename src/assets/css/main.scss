@@ -11,8 +11,32 @@ body {
         overflow: auto;
         position: fixed;
         top: 0;
+        padding-top: 10px;
+        padding-left: 10px;
         bottom: 0;
         background: rgba(255,255,255,0.6);
+        box-shadow: 6px 6px rgba(255,0,0,0.6);
+        h3{
+          font-family: 'Sansita One', cursive;
+        }
+        ul{
+          display: block;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          li{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            span{
+              background: #000;
+              font-weight: bold;
+              color: #fff;
+              padding:3px;
+              border-radius: 7px;
+            }
+          }
+        }
     }
 
     .btn-danger {

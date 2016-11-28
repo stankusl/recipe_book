@@ -1,7 +1,16 @@
-<div class="cart" ng-if="(Home.cart).length > 0">
+<!-- <div class="cart" ng-if="(Home.cart).length > 0">
   <ul ng-repeat="ingredient in Home.cart track by $index">
     <li>{{ ingredient.name }} <span style="cursor: pointer" ng-click="Home.removeFromCart($index)">X</span></li>
   </ul>
+</div> -->
+
+<div class="cart" ng-if="(Home.cart).length > 0">
+  <h3>Shopping Basket</h3>
+  <ul ng-repeat="ingredient in Home.cart track by $index">
+    <li>{{ ingredient.name }} ({{ ingredient.amount + '' + ingredient.unit }}) - {{ ingredient.price | currency }} <span style="cursor: pointer" ng-click="Home.removeFromCart($index)">X</span></li>
+  </ul>
+
+  <p>Total : {{ Home.showTotalAmount(Home.cart) | currency }}</p>
 </div>
 
 <h1 class="application-title">Recipe Book</h1>

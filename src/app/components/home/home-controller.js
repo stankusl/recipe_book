@@ -9,6 +9,15 @@
         self.data = {};
         self.cart = [];
 
+        self.showTotalAmount = function(cart) {
+          var total = 0;
+          angular.forEach(cart, function(ingredient){
+          //  console.log(ingredient)
+            total = total + parseInt(ingredient.price);
+          });
+          return total;
+        }
+
         self.removeFromCart = function(index) {
           self.cart.splice(index, 1);
           localStorage.setItem('items', JSON.stringify(self.cart));
@@ -22,10 +31,6 @@
           })
 
           localStorage.setItem('items', JSON.stringify(self.cart));
-        }
-
-        self.backButton = function() {
-          console.log('this works!');
         }
 
         self.showNextPage = function() {
@@ -47,8 +52,7 @@
                 HomeServices.getAllRecipes($stateParams.pageId).then(
                     function(result) {
                         self.data = result;
-
-                        console.log(result);
+                      //  console.log(result);
                         self.recipes = result.data;
                     },
                     function(err) {
