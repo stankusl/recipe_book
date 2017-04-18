@@ -85,7 +85,6 @@ body .recipe-list {
     background-color: white;
     background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, rgba(200, 0, 0, 0.5)), color-stop(50%, transparent)), -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(200, 0, 0, 0.5)), color-stop(50%, transparent));
     background-image: -webkit-linear-gradient(left, rgba(200, 0, 0, 0.5) 50%, transparent 50%), -webkit-linear-gradient(rgba(200, 0, 0, 0.5) 50%, transparent 50%);
-    background-image: -o-linear-gradient(left, rgba(200, 0, 0, 0.5) 50%, transparent 50%), -o-linear-gradient(rgba(200, 0, 0, 0.5) 50%, transparent 50%);
     background-image: linear-gradient(90deg, rgba(200, 0, 0, 0.5) 50%, transparent 50%), linear-gradient(rgba(200, 0, 0, 0.5) 50%, transparent 50%);
     background-size: 50px 50px;
     border: 20px solid rgba(255, 255, 255, 0.6);
